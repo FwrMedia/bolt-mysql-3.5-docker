@@ -28,6 +28,3 @@ npm-debug.log
 __*
 Thumbs.db
 Vagrantfile
-
-# specific ignores
-src/Site/CustomisationExtension.php

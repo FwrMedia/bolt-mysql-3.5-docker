@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bolt
+  labels:
+    app: bolt
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: bolt
+    tier: bolt
+  type: NodePort
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bolt
+  labels:
+    app: bolt
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: bolt
+        tier: bolt
+    spec:
+      containers:
+      - image: 127.0.0.1:30400/bolt:$BUILD_TAG
+        name: bolt
+        ports:
+        - containerPort: 80
+          name: bolt
