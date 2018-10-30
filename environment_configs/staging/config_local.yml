@@ -1,0 +1,7 @@
+database:
+  driver: mysql
+  # In this case 192.168.0.38 is the host machine running K8S
+  host: 192.168.0.38
+  username: developer
+  password: 6mBgYRJfBDPyLdwPL8ee
+  databasename: bolt_kubernetes
