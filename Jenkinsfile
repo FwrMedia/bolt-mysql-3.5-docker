@@ -13,7 +13,7 @@ node {
     env.BUILD_TAG=tag
 
     stage ('Build') {
-        sh "docker build -t ${imageName} applications/bolt"
+        sh "docker build -t ${imageName} bolt"
      }
 
     stage "Push"
