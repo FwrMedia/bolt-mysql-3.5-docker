@@ -21,5 +21,5 @@ node {
         sh "docker push ${imageName}"
 
     stage "Deploy"
-        kubernetesDeploy configs: "k8s/*.yaml", kubeconfigId: 'kenzan_kubeconfig'
+        kubernetesDeploy configs: "/k8s/*.yaml", kubeconfigId: 'kenzan_kubeconfig'
 }
